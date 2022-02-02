@@ -1,0 +1,41 @@
+{% macro displaySourceList(source_list) %} {% for source in source_list %}
+
+<div class="col-md-4 mt-4">
+      <div class="card default-color-light  z-depth-6 mt-1">
+        <div class="view" >
+        
+                  <h3 class="card-title"><a href="/news/{{source.id}}">{{source.name}}</a></h3>
+                  <p class="card-text"> {{source.id}} for the best trending news now. Follow the link for more details on the headlines</p>
+                  <a  href="/news/{{source.id}}">Link</a>
+                  
+                        
+            <p>Posted by: {{source.id}}</p>
+
+           
+        </div>
+      </div>
+</div>
+  
+{% endfor %} {% endmacro %} {% macro displayArticleList(articles_list) %} {% for article in articles_list %}
+  
+<div class="col-md-4 mt-2">
+  <div class="card">
+
+  <div class="view overlay">
+    <img style="height: 200px;" src="{{article.urlToImage}}">
+    <a href="{{article.url}}">
+      <div class="mask rgba-white-slight">Read more</div>
+    </a>
+  </div>
+
+    <h4 style="font-size: 15px;">{{article.name}}</h4>
+    <p>{{article.description}}</p>
+    <p>id :{{article.name}}</p>
+    <p>Author :{{article.author}}</p>
+    <p>Published on : {{article.publishedAt}}</p>
+     <a href = '{{article.url}}'>Read more</a>
+  
+  </div>
+</div>
+
+{% endfor %} {% endmacro %}
